@@ -1,0 +1,67 @@
+body {
+  padding: 10px 10px 50px 10px;
+}
+th,
+td,
+h3,
+h5,
+button {
+  font-family: Microsoft JhengHei;
+}
+.letter_button {
+  width: 100px;
+  margin: 3px;
+}
+.mandarin {
+  font-size: 20px;
+}
+.letter {
+  font-size: 40px;
+}
+table {
+  width: 130px;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+#change_topic,
+table {
+  margin-bottom: 0.5rem;
+}
+.row {
+  width: 424px;
+}
+#round_start {
+  margin: 3px 3px 3px auto;
+}
+#current_player {
+  border-bottom: 1px solid black;
+}
+#topic {
+  font-weight: bolder;
+}
+@media only screen and (max-width: 470px) {
+  body {
+    padding-right: 2vw;
+    padding-left: 2vw;
+  }
+  .row {
+    width: 96vw;
+    margin: auto 0;
+  }
+  .main_div {
+    padding: 0;
+  }
+  .letter_button {
+    width: 23vw;
+    height: auto;
+    margin: 0.5vw;
+  }
+  #round_start {
+    margin: 1vw 0.5vw 0.5vw auto;
+  }
+}
