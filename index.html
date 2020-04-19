@@ -25,18 +25,21 @@
       </button>
     </div>
     <div class="container-fluid main_div" style="display: none;">
+      <button id="board_button">記分板</button>
       <button id="change_topic">換題目</button>
       <h5 id="topic_h5">題目：<span id="topic"></span></h5>
       <h5 id="current_h5">現在為 <span id="current_player"></span> 回合</h5>
       <h5 id="left_time" style="display: none;">
         剩餘時間：<span id="time">10</span>
       </h5>
-      <table id="board">
-        <tr>
-          <th>玩家</th>
-          <th>分數</th>
-        </tr>
-      </table>
+      <div id="board_div">
+        <table id="board">
+          <tr>
+            <th>玩家</th>
+            <th>分數</th>
+          </tr>
+        </table>
+      </div>
     </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

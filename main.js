@@ -140,6 +140,9 @@ $(document).on("click", "#change_topic", function () {
   current_topic++;
   $("#topic").html(topics[current_topic]);
 });
+$(document).on("click", "#board_button", function () {
+  $("#board_div").slideToggle();
+});
 $(document).on("click", "#round_start", function () {
   $(".letter_button").prop("disabled", false);
   $(this).prop("disabled", true);

@@ -10,13 +10,14 @@ button {
 }
 .letter_button {
   width: 100px;
+  height: 110px;
   margin: 3px;
 }
 .mandarin {
-  font-size: 20px;
+  font-size: 17px;
 }
 .letter {
-  font-size: 40px;
+  font-size: 37px;
 }
 table {
   width: 130px;
@@ -58,6 +59,7 @@ table {
   }
   .letter_button {
     width: 23vw;
+    height: 23vw;
     height: auto;
     margin: 0.5vw;
   }
