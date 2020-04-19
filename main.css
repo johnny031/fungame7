@@ -12,6 +12,7 @@ button {
   width: 100px;
   height: 110px;
   margin: 3px;
+  border-radius: 10px;
 }
 .mandarin {
   font-size: 17px;
@@ -62,6 +63,7 @@ table {
     height: 23vw;
     height: auto;
     margin: 0.5vw;
+    border-radius: 2vw;
   }
   #round_start {
     margin: 1vw 0.5vw 0.5vw auto;
