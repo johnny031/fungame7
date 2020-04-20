@@ -126,8 +126,25 @@ function start() {
     let td1 = document.createElement("td");
     let td2 = document.createElement("td");
     td1.innerHTML = names[i];
-    td2.innerHTML = 0;
-    td2.setAttribute("id", "score" + i);
+    td2.style.position = "relative";
+
+    let btn_minus = document.createElement("button");
+    let icon_minus = document.createElement("i");
+    let div_score = document.createElement("div");
+    let btn_plus = document.createElement("button");
+    let icon_plus = document.createElement("i");
+    btn_minus.className = "minus";
+    icon_minus.className = "icon_minus fas fa-minus " + i;
+    div_score.innerHTML = 0;
+    div_score.setAttribute("id", "score" + i);
+    btn_plus.className = "plus";
+    icon_plus.className = "icon_plus fas fa-plus " + i;
+    btn_minus.append(icon_minus);
+    btn_plus.append(icon_plus);
+
+    td2.append(btn_minus);
+    td2.append(div_score);
+    td2.append(btn_plus);
     tr.append(td1);
     tr.append(td2);
     $("#board").append(tr);
@@ -160,6 +177,16 @@ $(document).on("click", ".letter_button", function () {
   $("#time").text("10");
   startTimer(9);
 });
+$(document).on("click", ".icon_minus", function () {
+  let minus = $("#score" + $(this).attr("class").slice(-1)).text();
+  minus--;
+  $("#score" + $(this).attr("class").slice(-1)).text(minus);
+});
+$(document).on("click", ".icon_plus", function () {
+  let plus = $("#score" + $(this).attr("class").slice(-1)).text();
+  plus++;
+  $("#score" + $(this).attr("class").slice(-1)).text(plus);
+});
 function startTimer(duration) {
   $("#time").text("10");
   let timer = duration,
@@ -188,4 +215,7 @@ function lose_point() {
   $("#left_time").slideUp();
   $(".letter_button").prop("disabled", true);
   $("#round_start").prop("disabled", false);
+}
+function adjust() {
+  $(".minus, .plus").toggle();
 }

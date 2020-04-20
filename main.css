@@ -27,7 +27,7 @@ button {
   font-size: 37px;
 }
 table {
-  width: 130px;
+  width: 180px;
 }
 table,
 th,
@@ -51,6 +51,34 @@ table {
 }
 #topic {
   font-weight: bolder;
+}
+.minus {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  border: none;
+  background: none;
+  padding: 0;
+  left: 10.3%;
+  top: 15%;
+  font-size: 12px;
+}
+.minus:focus {
+  outline: none;
+}
+.plus {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  border: none;
+  background: none;
+  padding: 0;
+  left: 80%;
+  top: 15%;
+  font-size: 12px;
+}
+.plus:focus {
+  outline: none;
 }
 @media only screen and (max-width: 470px) {
   body {
