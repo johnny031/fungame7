@@ -112,7 +112,7 @@ function start() {
       div_col.append(btn);
       div_row.append(div_col);
     }
-    $(".main_div").append(div_row);
+    $(".button_div").append(div_row);
   }
   let div_row = document.createElement("div");
   div_row.className = "row";
@@ -150,6 +150,7 @@ function start() {
     $("#board").append(tr);
   }
   $("#current_player").html(names[current_player]);
+  build_players_div();
   $(".setting_div").hide();
   $(".main_div").show();
 }
@@ -163,6 +164,7 @@ $(document).on("click", "#board_button", function () {
 $(document).on("click", "#round_start", function () {
   $(".letter_button").prop("disabled", false);
   $(this).prop("disabled", true);
+  $(".players_div > ol").children().eq(current_player).addClass("current");
   startTimer(9);
   $("#left_time").slideDown();
 });
@@ -173,6 +175,7 @@ $(document).on("click", ".letter_button", function () {
     current_player = 0;
   }
   $("#current_player").html(names[current_player]);
+  update_players_div();
   clearInterval(interval);
   $("#time").text("10");
   startTimer(9);
@@ -194,14 +197,14 @@ function startTimer(duration) {
   interval = setInterval(function () {
     seconds = parseInt(timer % 60, 10);
 
-    seconds = seconds < 10 ? "0" + seconds : seconds;
+    seconds = seconds < 10 && seconds >= 0 ? "0" + seconds : seconds;
 
     $("#time").text(seconds);
 
     if (--timer < -1) {
-      clearInterval(interval);
-      lose_point();
-      $("#time").text("10");
+      // clearInterval(interval);
+      // lose_point();
+      // $("#time").text("10");
     }
   }, 1000);
 }
@@ -215,7 +218,31 @@ function lose_point() {
   $("#left_time").slideUp();
   $(".letter_button").prop("disabled", true);
   $("#round_start").prop("disabled", false);
+  $(".current").removeClass();
 }
 function adjust() {
   $(".minus, .plus").toggle();
+}
+
+// temp
+function over() {
+  clearInterval(interval);
+  lose_point();
+  $("#time").text("10");
+}
+
+function build_players_div() {
+  for (let i = 0; i < names.length; i++) {
+    $(".players_div > ol").append("<li><h3>" + names[i] + "</h3></li>");
+  }
+}
+
+function update_players_div() {
+  $(".current").attr("class", "temp")
+  if ($(".temp").next().length === 0) {
+    $(".temp").siblings().first().addClass("current");
+  } else {
+    $(".temp").next().addClass("current");
+  }
+  $(".temp").removeClass();
 }

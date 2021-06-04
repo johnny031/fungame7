@@ -52,6 +52,23 @@ table {
 #topic {
   font-weight: bolder;
 }
+.players_div {
+  margin-left: 4rem;
+}
+.players_div ol,
+.players_div h3 {
+  font-size: 3rem;
+}
+.players_div ol li {
+  margin: 1rem 0;
+}
+.flex {
+  display: flex;
+}
+.current > h3 {
+  color: rgb(255, 0, 0);
+  font-size: 3.6rem;
+}
 .minus {
   display: none;
   cursor: pointer;
